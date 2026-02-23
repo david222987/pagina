@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DavidSoftMarket | Innovación 3D & Automatización</title>
+    <title>DavidSoftMarket | Innovación Tecnológica & Visión de Futuro</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
@@ -95,12 +95,18 @@
             border-color: #3b82f6;
         }
 
-        /* Perfil con borde difuminado solicitado */
+        .profile-container {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            border-radius: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
         .profile-glow {
             position: relative;
             padding: 4px;
             border-radius: 2rem;
-            box-shadow: 0 0 40px -10px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 0 60px -10px rgba(255, 255, 255, 0.2);
         }
         
         .hero-btn {
@@ -121,11 +127,11 @@
                 <span>David<span class="text-blue-500">SoftMarket</span></span>
             </div>
             <div class="hidden md:flex space-x-8 font-semibold text-slate-400">
-                <a href="#inicio" class="hover:text-white transition">Concepto</a>
-                <a href="#innovacion" class="hover:text-white transition">Innovación</a>
-                <a href="#sistemas" class="hover:text-white transition">Proyectos</a>
-                <a href="#sobre-mi" class="hover:text-white transition">Sobre mí</a>
-                <a href="#contacto" class="hover:text-white transition">Contacto</a>
+                <a href="#inicio" class="hover:text-white transition">Visión</a>
+                <a href="#servicios" class="hover:text-white transition">Servicios</a>
+                <a href="#sistemas" class="hover:text-white transition">Innovación</a>
+                <a href="#sobre-mi" class="hover:text-white transition">Estrategia</a>
+                <a href="#contacto" class="hover:text-white transition">Consultoría</a>
             </div>
         </div>
     </nav>
@@ -135,52 +141,106 @@
         <div id="three-canvas"></div>
         <div class="max-w-7xl mx-auto px-6 text-center relative z-10 pointer-events-none">
             <span class="px-4 py-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs font-bold mb-8 inline-block uppercase tracking-[0.3em] backdrop-blur-sm">
-                Arquitectura de Ideas & Automatización
+                Liderando la evolución digital corporativa
             </span>
             <h1 class="text-6xl md:text-9xl font-black mb-8 tracking-tighter leading-[0.9]">
-                Pensamos. <br><span class="gradient-text italic">Desarrollamos.</span>
+                Impulsamos Ideas con TecnologIA <br><span class="gradient-text italic"></span>
             </h1>
             <p class="text-lg md:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-                Transformamos ideas abstractas en infraestructuras tecnológicas de alto impacto. 
+                No solo adaptamos su empresa a la tecnología; inyectamos una visión vanguardista que redefine su potencial mediante ingeniería de software e IA de próxima generación.
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-6 pointer-events-auto">
-                <a href="#contacto" class="hero-btn px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg hover:bg-blue-500 transition-all shadow-2xl shadow-blue-600/30 flex items-center justify-center gap-3">
-                    Inyectar Tecnología <i data-lucide="zap"></i>
+                <a href="#servicios" class="hero-btn px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg hover:bg-blue-500 transition-all shadow-2xl shadow-blue-600/30 flex items-center justify-center gap-3">
+                    Descubra su Futuro Tecnológico <i data-lucide="sparkles"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Innovación / Porque trabajar con nosotros -->
-    <section id="innovacion" class="py-32 bg-slate-950 relative">
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-32 bg-slate-950 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal">
+                <span class="text-blue-500 font-bold tracking-widest uppercase text-xs mb-4 block">Ecosistema de Soluciones</span>
+                <h2 class="text-4xl md:text-6xl font-black mb-6">Servicios de <span class="text-blue-500">Alto Rendimiento.</span></h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">Arquitectura digital diseñada para organizaciones que buscan la excelencia y la autonomía tecnológica.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="card-innovacion p-10 rounded-[2.5rem] reveal">
+                    <div class="text-blue-500 mb-6"><i data-lucide="layout" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Creación de Páginas Web</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Interfaces de alto impacto visual y optimización SEO orientadas a la conversión y experiencia de usuario.</p>
+                </div>
+                <!-- Servicio 2 -->
+                <div class="card-innovacion p-10 rounded-[2.5rem] reveal" style="transition-delay: 0.1s;">
+                    <div class="text-blue-500 mb-6"><i data-lucide="code-2" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Creación de Software a Medida</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Desarrollo de herramientas robustas diseñadas específicamente para resolver los flujos de trabajo únicos de tu empresa.</p>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="card-innovacion p-10 rounded-[2.5rem] reveal" style="transition-delay: 0.2s;">
+                    <div class="text-blue-500 mb-6"><i data-lucide="brain-circuit" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Consultoría en Inteligencias</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Asesoramiento experto para integrar inteligencias artificiales que optimicen la toma de decisiones basada en datos.</p>
+                </div>
+                <!-- Servicio 4 -->
+                <div class="card-innovacion p-10 rounded-[2.5rem] reveal" style="transition-delay: 0.3s;">
+                    <div class="text-blue-500 mb-6"><i data-lucide="cpu" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Consultoría en Herramientas con IA Aplicada</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Implementación técnica de herramientas con IA para automatizar tareas repetitivas y aumentar la productividad operativa.</p>
+                </div>
+                <!-- Servicio 5 -->
+                <div class="card-innovacion p-10 rounded-[2.5rem] reveal" style="transition-delay: 0.4s;">
+                    <div class="text-blue-500 mb-6"><i data-lucide="trending-up" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Consultoría e Innovación y Estrategia Comercial</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Consultoría estratégica para fusionar innovación tecnológica con objetivos de crecimiento en el mercado actual.</p>
+                </div>
+                <!-- Servicio 6 -->
+                <div class="card-innovacion p-10 rounded-[2.5rem] reveal" style="transition-delay: 0.5s;">
+                    <div class="text-blue-500 mb-6"><i data-lucide="clapperboard" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Producción de Contenido con IA</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Generación de activos digitales y contenido multimedia utilizando algoritmos generativos de última generación.</p>
+                </div>
+                <!-- Servicio 7 -->
+                <div class="card-innovacion p-10 rounded-[2.5rem] reveal lg:col-span-3 flex flex-col md:flex-row items-center gap-8" style="transition-delay: 0.6s;">
+                    <div class="text-blue-500"><i data-lucide="shield-check" class="w-12 h-12"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Consultoría en Prevención de Riesgos e Informática</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Seguridad de la información y consultoría preventiva para proteger tus activos digitales y asegurar la continuidad del negocio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUÉ ELEGIRNOS - ENFOQUE INNOVACIÓN -->
+    <section id="innovacion" class="py-32 bg-slate-900/50 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-20 items-center">
                 <div class="reveal">
-                    <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight">La tecnología es el <br><span class="text-blue-500">motor del cambio.</span> ⚙️</h2>
+                    <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight">Elevamos su <br><span class="text-blue-500">ADN Tecnológico.</span> 🧬</h2>
                     <p class="text-slate-400 text-xl mb-12 leading-relaxed">
-                        No somos una fábrica de software convencional. Somos un laboratorio de innovación donde cada problema es una oportunidad para <strong>automatizar</strong>.
+                        Nuestra misión es mantener activa una <strong>visión tecnológica imbatible</strong>. Ayudamos a las empresas a no solo usar tecnología, sino a encarnarla, convirtiendo la innovación en su ventaja competitiva más sólida y duradera.
                     </p>
                 </div>
                 <div class="grid grid-cols-1 gap-6 reveal" style="transition-delay: 0.2s;">
                     <div class="card-innovacion p-10 rounded-3xl">
-                        <div class="text-blue-500 mb-6"><i data-lucide="terminal" class="w-12 h-12"></i></div>
-                        <h3 class="text-2xl font-bold mb-6 italic">Ideas Disruptivas: ¿Por qué nosotros? 🧠</h3>
+                        <div class="text-blue-500 mb-6"><i data-lucide="lightbulb" class="w-12 h-12"></i></div>
+                        <h3 class="text-2xl font-bold mb-6 italic">¿Por qué confiar en nuestra visión? ✨</h3>
                         <ul class="space-y-4 text-slate-300">
                             <li class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mt-1 shrink-0"></i>
-                                <span><strong>Enfoque en ROI:</strong> Sistemas diseñados para retornar valor inmediato.</span>
+                                <span><strong>Vanguardia Constante:</strong> No seguimos tendencias, las implementamos para anticipar los cambios del mercado.</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mt-1 shrink-0"></i>
-                                <span><strong>IA Nativa:</strong> No pegamos parches, integramos IA desde el núcleo.</span>
+                                <span><strong>Mentalidad Evolutiva:</strong> Diseñamos sistemas que crecen y se adaptan orgánicamente a su empresa.</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mt-1 shrink-0"></i>
-                                <span><strong>Escalabilidad:</strong> Infraestructura que crece sin fricción.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mt-1 shrink-0"></i>
-                                <span><strong>Soporte Proactivo:</strong> Monitoreo inteligente de tus operaciones.</span>
+                                <span><strong>Integridad Digital:</strong> Fusionamos innovación con seguridad para una evolución sin riesgos.</span>
                             </li>
                         </ul>
                     </div>
@@ -189,14 +249,14 @@
         </div>
     </section>
 
-    <!-- SISTEMAS REALIZADOS - SECCIÓN BLANCA -->
+    <!-- SISTEMAS REALIZADOS -->
     <section id="sistemas" class="py-32 bg-white relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="mb-20 reveal text-center md:text-left">
-                <span class="text-blue-600 font-bold tracking-widest uppercase text-sm block mb-4">Portafolio Técnico</span>
+                <span class="text-blue-600 font-bold tracking-widest uppercase text-sm block mb-4">Hitos de Transformación</span>
                 <h2 class="text-5xl md:text-6xl font-black text-slate-900 leading-tight">
-                    Análisis + Innovación = <br>
-                    <span class="text-blue-600 italic">Sistemas que impactan.</span>
+                    Innovaciones que <br>
+                    <span class="text-blue-600 italic">impulsan el cambio.</span>
                 </h2>
             </div>
 
@@ -204,210 +264,166 @@
                 <!-- Proyectos -->
                 <div class="card-portfolio-light p-8 rounded-[2.5rem] reveal">
                     <div class="mb-6 w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center">
-                        <i data-lucide="warehouse" class="w-10 h-10 text-blue-600"></i>
+                        <i data-lucide="globe" class="w-10 h-10 text-blue-600"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-900">Nexus ERP Cloud</h3>
-                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">Automatización de logística con IA predictiva para la gestión de inventarios en tiempo real.</p>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-900">Ecosistema Global</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">Unificación de procesos mediante una plataforma cloud que garantiza la escalabilidad y visión 360 del negocio.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase">React</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase">Node.js</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase">Escalabilidad</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase">Cloud First</span>
                     </div>
                 </div>
 
                 <div class="card-portfolio-light p-8 rounded-[2.5rem] reveal" style="transition-delay: 0.1s;">
                     <div class="mb-6 w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center">
-                        <i data-lucide="bot-message-square" class="w-10 h-10 text-purple-600"></i>
+                        <i data-lucide="zap" class="w-10 h-10 text-purple-600"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-900">OmniBot 360</h3>
-                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">Agente de atención al cliente multicanal capaz de resolver el 80% de consultas comunes.</p>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-900">IA Cognitiva</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">Implementación de redes neuronales para automatizar la resolución de problemas complejos en tiempo real.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase">AI/ML</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase">Python</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase">Inteligencia</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase">Autonomía</span>
                     </div>
                 </div>
 
                 <div class="card-portfolio-light p-8 rounded-[2.5rem] reveal" style="transition-delay: 0.2s;">
                     <div class="mb-6 w-16 h-16 bg-pink-50 rounded-2xl flex items-center justify-center">
-                        <i data-lucide="activity" class="w-10 h-10 text-pink-600"></i>
+                        <i data-lucide="shield-check" class="w-10 h-10 text-pink-600"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-900">VitalCore App</h3>
-                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">Ecosistema de monitoreo médico preventivo conectado con dispositivos IoT de alta precisión.</p>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-900">Infraestructura Resiliente</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">Blindaje tecnológico de activos críticos, asegurando que la innovación camine de la mano con la estabilidad.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase">IoT</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase">Cloud</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase">Resiliencia</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase">Seguridad</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SOBRE MÍ / EL DESARROLLADOR -->
+    <!-- SOBRE MÍ -->
     <section id="sobre-mi" class="py-32 bg-slate-950 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-white/5 rounded-[3rem] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 reveal">
+            <div class="profile-container p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 reveal">
                 <div class="w-full md:w-1/3 flex justify-center">
                     <div class="profile-glow">
-                        <div class="bg-slate-900 rounded-[1.8rem] overflow-hidden w-64 h-64 md:w-80 md:h-80 relative border border-blue-500/20">
+                        <div class="bg-slate-900 rounded-[1.8rem] overflow-hidden w-64 h-64 md:w-80 md:h-80 relative border border-white/20">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" 
-                                 alt="David - Desarrollador Principal" 
+                                 alt="David - Lider de Estrategia" 
                                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
                         </div>
                     </div>
                 </div>
                 <div class="w-full md:w-2/3 text-left">
-                    <span class="text-blue-500 font-bold tracking-[0.3em] uppercase text-sm mb-4 block">Arquitecto de Software</span>
-                    <h2 class="text-5xl font-black mb-6">Hola, soy <span class="gradient-text">David.</span></h2>
-                    <p class="text-slate-300 text-xl leading-relaxed mb-8">
-                        Mi enfoque principal es la <strong>convergencia entre el diseño estético y la lógica de automatización robusta</strong>. No solo escribo código; diseño ecosistemas digitales que permiten a las empresas operar con la mínima fricción posible. Especializado en arquitecturas escalables, IA aplicada y experiencias 3D inmersivas.
+                    <span class="text-blue-300 font-bold tracking-[0.3em] uppercase text-sm mb-4 block">Arquitecto de Transformación</span>
+                    <h2 class="text-5xl font-black mb-6 text-white">Yo soy <span class="text-white italic">David.</span></h2>
+                    <p class="text-blue-50 text-xl leading-relaxed mb-8 opacity-90">
+                        Mi propósito es <strong>instalar una mentalidad de innovación perpetua</strong> en el núcleo de su organización. No me conformo con entregar software; busco ser el catalizador que despierte el potencial tecnológico de su equipo, garantizando que su visión nunca quede obsoleta frente a los desafíos del mañana.
                     </p>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                        <div><p class="text-3xl font-black text-white">5+</p><p class="text-sm text-slate-500">Años de Exp.</p></div>
-                        <div><p class="text-3xl font-black text-white">40+</p><p class="text-sm text-slate-500">Sistemas</p></div>
-                        <div><p class="text-3xl font-black text-white">100%</p><p class="text-sm text-slate-500">Foco Innovador</p></div>
+                        <div><p class="text-3xl font-black text-white">Visión</p><p class="text-sm text-blue-200">De Futuro</p></div>
+                        <div><p class="text-3xl font-black text-white">Evolución</p><p class="text-sm text-blue-200">Continuada</p></div>
+                        <div><p class="text-3xl font-black text-white">Disrupción</p><p class="text-sm text-blue-200">Estratégica</p></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- TESTIMONIOS DE CLIENTES -->
-    <section class="py-32 bg-slate-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <span class="text-blue-500 font-bold tracking-widest uppercase text-xs mb-4 block">Feedback</span>
-                <h2 class="text-4xl font-black mb-4">Lo que dicen mis clientes</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="testimonial-card p-8 rounded-3xl reveal">
-                    <div class="flex gap-1 text-yellow-500 mb-6">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-slate-300 italic mb-8 leading-relaxed">"David transformó completamente nuestro proceso de logística. La IA predictiva nos ha ahorrado miles de dólares en inventario innecesario."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center font-bold text-blue-400">RL</div>
-                        <div>
-                            <p class="font-bold text-white">Ricardo Luna</p>
-                            <p class="text-xs text-slate-500 italic">CEO de Nexus Logística</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card p-8 rounded-3xl reveal" style="transition-delay: 0.1s;">
-                    <div class="flex gap-1 text-yellow-500 mb-6">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-slate-300 italic mb-8 leading-relaxed">"La capacidad de David para entender problemas complejos y simplificarlos a través de la tecnología es simplemente asombrosa."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-purple-600/20 rounded-full flex items-center justify-center font-bold text-purple-400">SM</div>
-                        <div>
-                            <p class="font-bold text-white">Sofía Méndez</p>
-                            <p class="text-xs text-slate-500 italic">Directora de Innovación</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="testimonial-card p-8 rounded-3xl reveal" style="transition-delay: 0.2s;">
-                    <div class="flex gap-1 text-yellow-500 mb-6">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-slate-300 italic mb-8 leading-relaxed">"El ERP que desarrolló es intuitivo y potente. Mi equipo pasó de odiar los sistemas a no poder vivir sin Nexus."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-pink-600/20 rounded-full flex items-center justify-center font-bold text-pink-400">AG</div>
-                        <div>
-                            <p class="font-bold text-white">Andrés García</p>
-                            <p class="text-xs text-slate-500 italic">Gerente de Operaciones</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- CONSULTOR IA -->
-    <section id="ia-consultor" class="py-32 bg-slate-950">
+     <section id="ia-consultor" class="py-32 bg-slate-950">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Laboratorio de Ideas ✨</h2>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Consultor de Estrategia IA</h2>
             <div class="bg-black/40 border border-white/10 rounded-[2.5rem] overflow-hidden backdrop-blur-2xl text-left shadow-2xl">
                 <div id="chat-container" class="h-[400px] overflow-y-auto p-8 flex flex-col space-y-4">
-                    <div class="ai-bubble ai-bubble-bot">¡Hola! Soy la IA de David. Cuéntame sobre ese problema que quieres automatizar o esa idea que quieres volver realidad.</div>
+                    <div class="ai-bubble ai-bubble-bot">Soy el motor de visión de David. ¿Cómo puedo ayudar a evolucionar tecnológicamente su empresa hoy?</div>
                 </div>
                 <div class="p-6 bg-white/5 border-t border-white/10 flex gap-3">
-                    <input type="text" id="user-input" placeholder="Describe tu idea técnica..." class="flex-1 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl outline-none text-white text-sm transition-all focus:border-blue-500">
-                    <button onclick="sendMessage()" class="px-8 py-4 bg-white text-slate-950 rounded-2xl hover:bg-blue-600 hover:text-white transition-all font-bold">Analizar</button>
+                    <input type="text" id="user-input" placeholder="Escriba su consulta..." class="flex-1 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl outline-none text-white text-sm transition-all focus:border-blue-500">
+                    <button id="send-btn" onclick="sendMessage()" class="px-8 py-4 bg-white text-slate-950 rounded-2xl hover:bg-blue-600 hover:text-white transition-all font-bold disabled:opacity-50">Enviar</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="py-32 bg-slate-950 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-start">
-                <div class="reveal text-left">
-                    <h2 class="text-5xl md:text-7xl font-black mb-8 leading-tight">Trabaja con nosotros y construye el <span class="text-blue-500 italic">Futuro Hoy.</span></h2>
-                    <p class="text-slate-400 text-xl mb-12">Trae tu idea. Nosotros pondremos la tecnología necesaria para que tu negocio funcione con total fluidez.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-6 group">
-                            <div class="w-14 h-14 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all"><i data-lucide="phone"></i></div>
-                            <div><p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Llámanos</p><p class="text-xl font-bold">+51 987 654 321</p></div>
-                        </div>
-                        <div class="flex items-center gap-6 group">
-                            <div class="w-14 h-14 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all"><i data-lucide="mail"></i></div>
-                            <div><p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Email</p><p class="text-xl font-bold">contacto@davidsoftmarket.com</p></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="space-y-6 reveal" style="transition-delay: 0.2s;">
-                    <div class="bg-white/5 p-1 rounded-[2.5rem] border border-white/10">
-                        <textarea id="contact-msg" placeholder="Describe tu visión tecnológica..." rows="6" class="w-full px-8 py-8 bg-transparent border-none rounded-[2.4rem] focus:ring-0 transition outline-none text-white text-xl"></textarea>
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <button onclick="polishMessage()" class="py-4 border border-blue-500/30 text-blue-400 rounded-2xl hover:bg-blue-500/10 transition font-bold flex items-center justify-center gap-2">
-                            <i data-lucide="wand-2" class="w-5 h-5"></i> Refinar Propuesta con IA
-                        </button>
-                        <button class="py-4 bg-blue-600 text-white font-black text-xl rounded-2xl hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/20">
-                            Iniciar Proyecto 🛠️
-                        </button>
-                    </div>
-                    <div id="polish-status" class="hidden text-sm text-blue-400 font-bold text-center"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-16 bg-black text-white border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-left">
-            <div class="text-3xl font-black tracking-tighter">David<span class="text-blue-500">SoftMarket</span></div>
-            <p class="text-slate-600 font-medium">© 2024 DavidSoftMarket. Innovación que impacta.</p>
-        </div>
-    </footer>
 
     <script>
+        /**
+         * CONFIGURACIÓN PARA VERCEL
+         * 1. Ve a tu proyecto en Vercel > Settings > Environment Variables.
+         * 2. Crea una variable llamada: VITE_GEMINI_API_KEY
+         * 3. Pega tu clave de API de Google AI Studio.
+         */
+        const apiKey = window.ENV?.VITE_GEMINI_API_KEY || ""; 
+
+        async function callGemini(prompt, systemPrompt = "") {
+            if (!apiKey || apiKey === "") {
+                return "Error de Configuración: No se detectó la clave de API. Si estás en Vercel, asegúrate de haber agregado VITE_GEMINI_API_KEY en las variables de entorno.";
+            }
+
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] }
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+                return data.candidates?.[0]?.content?.parts?.[0]?.text || "No hay respuesta del servidor.";
+            } catch (err) {
+                return "Error de conexión con el motor de IA.";
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('user-input');
+            const btn = document.getElementById('send-btn');
+            const text = input.value.trim();
+            if(!text || btn.disabled) return;
+
+            btn.disabled = true;
+            appendBubble(text, 'user');
+            input.value = '';
+            
+            const loadingId = 'loading-' + Date.now();
+            appendBubble("Procesando visión tecnológica...", 'bot', loadingId);
+
+            const system = "Eres el motor de innovación de DavidSoftMarket. Mantén una visión tecnológica activa, innovadora y profesional. No menciones facturación, enfócate en valor y tecnología.";
+            const response = await callGemini(text, system);
+            
+            const loadingElem = document.getElementById(loadingId);
+            if(loadingElem) loadingElem.innerText = response;
+            btn.disabled = false;
+        }
+
+        function appendBubble(text, side, id = null) {
+            const chat = document.getElementById('chat-container');
+            const div = document.createElement('div');
+            div.className = `ai-bubble ai-bubble-${side}`;
+            if(id) div.id = id;
+            div.innerText = text;
+            chat.appendChild(div);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        // Three.js Background
+        // Declaración global única de variables
         let scene, camera, renderer, particles, starGeo;
-        let mouseX = 0, mouseY = 0;
-        let targetX = 0, targetY = 0;
-        const apiKey = ""; 
 
         function initThree() {
             const container = document.getElementById('three-canvas');
+            if (!container) return;
+
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             camera.position.z = 1;
-            
+
             renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(window.devicePixelRatio);
@@ -427,100 +443,27 @@
                 size: 0.005,
                 color: 0x3b82f6,
                 transparent: true,
-                opacity: 0.8,
-                blending: THREE.AdditiveBlending
+                opacity: 0.8
             });
             
             particles = new THREE.Points(starGeo, starMaterial);
             scene.add(particles);
 
-            window.addEventListener('mousemove', (e) => {
-                mouseX = (e.clientX - window.innerWidth / 2) / 100;
-                mouseY = (e.clientY - window.innerHeight / 2) / 100;
-            });
-
-            animate();
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-            
-            targetX = mouseX * 0.1;
-            targetY = mouseY * 0.1;
-            
-            particles.rotation.y += 0.002;
-            particles.rotation.x += (targetY - particles.rotation.x) * 0.05;
-            particles.rotation.y += (targetX - particles.rotation.y) * 0.05;
-            
-            const positions = starGeo.attributes.position.array;
-            for(let i = 0; i < positions.length; i += 3) {
-                positions[i+1] += Math.sin(Date.now() * 0.001 + positions[i]) * 0.001;
+            function anim() { 
+                requestAnimationFrame(anim); 
+                particles.rotation.y += 0.001; 
+                renderer.render(scene, camera); 
             }
-            starGeo.attributes.position.needsUpdate = true;
-
-            renderer.render(scene, camera);
-        }
-
-        async function callGemini(prompt, systemPrompt = "") {
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            const payload = {
-                contents: [{ parts: [{ text: prompt }] }],
-                systemInstruction: { parts: [{ text: systemPrompt }] }
-            };
-
-            for (let i = 0; i < 5; i++) {
-                try {
-                    const response = await fetch(url, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    const data = await response.json();
-                    return data.candidates?.[0]?.content?.parts?.[0]?.text;
-                } catch (err) {
-                    await new Promise(res => setTimeout(res, Math.pow(2, i) * 1000));
-                }
-            }
-            return "Lo siento, mi conexión cerebral está ocupada. Intenta de nuevo.";
-        }
-
-        async function sendMessage() {
-            const input = document.getElementById('user-input');
-            const text = input.value.trim();
-            if(!text) return;
-            appendBubble(text, 'user');
-            input.value = '';
-            const response = await callGemini(text, "Eres el consultor tecnológico de DavidSoftMarket.");
-            appendBubble(response, 'bot');
-        }
-
-        async function polishMessage() {
-            const textarea = document.getElementById('contact-msg');
-            const status = document.getElementById('polish-status');
-            const original = textarea.value.trim();
-            if(original.length < 5) return;
-
-            status.innerText = "✨ Refinando tu visión tecnológica...";
-            status.classList.remove('hidden');
-
-            const response = await callGemini(original, "Reescribe este mensaje de contacto para que suene profesional y técnico.");
-            textarea.value = response;
-            status.innerText = "✨ ¡Visión optimizada!";
-            setTimeout(() => status.classList.add('hidden'), 3000);
-        }
-
-        function appendBubble(text, side) {
-            const chat = document.getElementById('chat-container');
-            const div = document.createElement('div');
-            div.className = `ai-bubble ai-bubble-${side}`;
-            div.innerText = text;
-            chat.appendChild(div);
-            chat.scrollTop = chat.scrollHeight;
+            anim();
         }
 
         window.onload = () => {
             initThree();
             lucide.createIcons();
+            document.getElementById('user-input').addEventListener('keypress', (e) => { 
+                if(e.key === 'Enter') sendMessage(); 
+            });
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
             }, { threshold: 0.1 });
@@ -528,10 +471,61 @@
         };
 
         window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            if (camera && renderer) {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
         });
     </script>
+  
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-32 bg-slate-950 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div class="reveal text-left">
+                    <h2 class="text-5xl md:text-7xl font-black mb-8 leading-tight">Trascienda. <br>Lidere la <span class="text-blue-500 italic">Nueva Era.</span></h2>
+                    <p class="text-slate-400 text-xl mb-12">No busque un proveedor, encuentre un socio que mantenga su visión tecnológica en la cima. Iniciemos la evolución.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-6 group">
+                            <div class="w-14 h-14 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all"><i data-lucide="phone"></i></div>
+                            <div><p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Enlace Directo</p><p class="text-xl font-bold">+51 987 654 321</p></div>
+                        </div>
+                        <div class="flex items-center gap-6 group">
+                            <div class="w-14 h-14 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all"><i data-lucide="mail"></i></div>
+                            <div><p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Email Estratégico</p><p class="text-xl font-bold">vision@davidsoftmarket.com</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6 reveal" style="transition-delay: 0.2s;">
+                    <div class="bg-white/5 p-1 rounded-[2.5rem] border border-white/10">
+                        <textarea id="contact-msg" placeholder="¿Cuál es su visión para los próximos 5 años?" rows="6" class="w-full px-8 py-8 bg-transparent border-none rounded-[2.4rem] focus:ring-0 transition outline-none text-white text-xl"></textarea>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <button onclick="polishMessage()" class="py-4 border border-blue-500/30 text-blue-400 rounded-2xl hover:bg-blue-500/10 transition font-bold flex items-center justify-center gap-2">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i> Refinar Visión de Proyecto
+                        </button>
+                        <button class="py-4 bg-blue-600 text-white font-black text-xl rounded-2xl hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/20">
+                            Iniciar Transformación 🛠️
+                        </button>
+                    </div>
+                    <div id="polish-status" class="hidden text-sm text-blue-400 font-bold text-center"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-black text-white border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-left">
+            <div class="text-3xl font-black tracking-tighter">David<span class="text-blue-500">SoftMarket</span></div>
+            <p class="text-slate-600 font-medium text-sm">© 2024 DavidSoftMarket. Ingeniería para la Evolución Continua.</p>
+        </div>
+    </footer>
+
+    
 </body>
 </html>
