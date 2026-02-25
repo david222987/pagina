@@ -1,19 +1,22 @@
-// api/chat.js — Función Serverless de Vercel
-// La API Key NUNCA llega al cliente, vive solo en el servidor.
+// api/chat.js — Función Serverless de Vercel (CommonJS)
 
-export default async function handler(req, res) {
-  // Solo permitir método POST
+module.exports = async function handler(req, res) {
+  // CORS headers por si acaso
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  if (req.method === "OPTIONS") return res.status(200).end();
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método no permitido." });
   }
 
-  // Leer la API Key desde las variables de entorno del servidor de Vercel
   const apiKey = process.env.GEMINI_API_KEY;
 
   if (!apiKey) {
     return res.status(500).json({
-      error:
-        "Error de configuración: La variable de entorno GEMINI_API_KEY no está definida en Vercel.",
+      error: "GEMINI_API_KEY no está definida en las variables de entorno de Vercel.",
     });
   }
 
@@ -23,8 +26,8 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "El campo 'prompt' es requerido." });
   }
 
-  const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-  
+  const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+
   const payload = {
     contents: [{ parts: [{ text: prompt }] }],
     ...(systemPrompt && {
@@ -39,21 +42,21 @@ export default async function handler(req, res) {
       body: JSON.stringify(payload),
     });
 
+    const data = await geminiResponse.json();
+
     if (!geminiResponse.ok) {
-      const errorData = await geminiResponse.json();
       return res.status(geminiResponse.status).json({
-        error: `Error de Gemini API: ${errorData?.error?.message || "Error desconocido"}`,
+        error: `Error de Gemini: ${data?.error?.message || "Error desconocido"}`,
       });
     }
 
-    const data = await geminiResponse.json();
     const text =
       data.candidates?.[0]?.content?.parts?.[0]?.text ||
       "No se obtuvo respuesta.";
 
     return res.status(200).json({ response: text });
   } catch (err) {
-    console.error("Error al llamar a Gemini:", err);
+    console.error("Error:", err);
     return res.status(500).json({ error: "Error de conexión con Gemini API." });
   }
-}
+};
