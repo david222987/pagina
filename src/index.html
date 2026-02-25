@@ -347,138 +347,113 @@
     </section>
 
 
-    <script>
-        /**
-         * CONFIGURACIÓN PARA VERCEL
-         * 1. Ve a tu proyecto en Vercel > Settings > Environment Variables.
-         * 2. Crea una variable llamada: VITE_GEMINI_API_KEY
-         * 3. Pega tu clave de API de Google AI Studio.
-         */
-        const apiKey = window.ENV?.VITE_GEMINI_API_KEY || ""; 
+    <!-- 
+  =======================================================
+  REEMPLAZA el bloque <script> en tu index.html con esto
+  =======================================================
+-->
+<script>
+    // ✅ Ya NO se necesita ninguna API key en el frontend.
+    // La clave vive de forma segura en las variables de entorno de Vercel.
 
-        async function callGemini(prompt, systemPrompt = "") {
-            if (!apiKey || apiKey === "") {
-                return "Error de Configuración: No se detectó la clave de API. Si estás en Vercel, asegúrate de haber agregado VITE_GEMINI_API_KEY en las variables de entorno.";
-            }
-
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            
-            const payload = {
-                contents: [{ parts: [{ text: prompt }] }],
-                systemInstruction: { parts: [{ text: systemPrompt }] }
-            };
-
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const data = await response.json();
-                return data.candidates?.[0]?.content?.parts?.[0]?.text || "No hay respuesta del servidor.";
-            } catch (err) {
-                return "Error de conexión con el motor de IA.";
-            }
-        }
-
-        async function sendMessage() {
-            const input = document.getElementById('user-input');
-            const btn = document.getElementById('send-btn');
-            const text = input.value.trim();
-            if(!text || btn.disabled) return;
-
-            btn.disabled = true;
-            appendBubble(text, 'user');
-            input.value = '';
-            
-            const loadingId = 'loading-' + Date.now();
-            appendBubble("Procesando visión tecnológica...", 'bot', loadingId);
-
-            const system = "Eres el motor de innovación de DavidSoftMarket. Mantén una visión tecnológica activa, innovadora y profesional. No menciones facturación, enfócate en valor y tecnología.";
-            const response = await callGemini(text, system);
-            
-            const loadingElem = document.getElementById(loadingId);
-            if(loadingElem) loadingElem.innerText = response;
-            btn.disabled = false;
-        }
-
-        function appendBubble(text, side, id = null) {
-            const chat = document.getElementById('chat-container');
-            const div = document.createElement('div');
-            div.className = `ai-bubble ai-bubble-${side}`;
-            if(id) div.id = id;
-            div.innerText = text;
-            chat.appendChild(div);
-            chat.scrollTop = chat.scrollHeight;
-        }
-
-        // Three.js Background
-        // Declaración global única de variables
-        let scene, camera, renderer, particles, starGeo;
-
-        function initThree() {
-            const container = document.getElementById('three-canvas');
-            if (!container) return;
-
-            scene = new THREE.Scene();
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.z = 1;
-
-            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(window.devicePixelRatio);
-            container.appendChild(renderer.domElement);
-
-            starGeo = new THREE.BufferGeometry();
-            const starCount = 6000;
-            const posArray = new Float32Array(starCount * 3);
-            
-            for (let i = 0; i < starCount * 3; i++) {
-                posArray[i] = (Math.random() - 0.5) * 10;
-            }
-            
-            starGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-            
-            const starMaterial = new THREE.PointsMaterial({
-                size: 0.005,
-                color: 0x3b82f6,
-                transparent: true,
-                opacity: 0.8
-            });
-            
-            particles = new THREE.Points(starGeo, starMaterial);
-            scene.add(particles);
-
-            function anim() { 
-                requestAnimationFrame(anim); 
-                particles.rotation.y += 0.001; 
-                renderer.render(scene, camera); 
-            }
-            anim();
-        }
-
-        window.onload = () => {
-            initThree();
-            lucide.createIcons();
-            document.getElementById('user-input').addEventListener('keypress', (e) => { 
-                if(e.key === 'Enter') sendMessage(); 
+    async function callGemini(prompt, systemPrompt = "") {
+        try {
+            const response = await fetch("/api/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ prompt, systemPrompt }),
             });
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        };
+            const data = await response.json();
 
-        window.addEventListener('resize', () => {
-            if (camera && renderer) {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
+            if (!response.ok) {
+                return `Error: ${data.error || "Respuesta inválida del servidor."}`;
             }
+
+            return data.response || "No hay respuesta del servidor.";
+        } catch (err) {
+            console.error("Error al contactar /api/chat:", err);
+            return "Error de conexión con el motor de IA.";
+        }
+    }
+
+    async function sendMessage() {
+        const input = document.getElementById('user-input');
+        const btn = document.getElementById('send-btn');
+        const text = input.value.trim();
+        if (!text || btn.disabled) return;
+
+        btn.disabled = true;
+        appendBubble(text, 'user');
+        input.value = '';
+
+        const loadingId = 'loading-' + Date.now();
+        appendBubble("Procesando visión tecnológica...", 'bot', loadingId);
+
+        const system = "Eres el motor de innovación de DavidSoftMarket. Mantén una visión tecnológica activa, innovadora y profesional. No menciones facturación, enfócate en valor y tecnología.";
+        const response = await callGemini(text, system);
+
+        const loadingElem = document.getElementById(loadingId);
+        if (loadingElem) loadingElem.innerText = response;
+        btn.disabled = false;
+    }
+
+    function appendBubble(text, side, id = null) {
+        const chat = document.getElementById('chat-container');
+        const div = document.createElement('div');
+        div.className = `ai-bubble ai-bubble-${side}`;
+        if (id) div.id = id;
+        div.innerText = text;
+        chat.appendChild(div);
+        chat.scrollTop = chat.scrollHeight;
+    }
+
+    // Three.js Background
+    let scene, camera, renderer, particles, starGeo;
+
+    function initThree() {
+        const container = document.getElementById('three-canvas');
+        if (!container) return;
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 1;
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        container.appendChild(renderer.domElement);
+        starGeo = new THREE.BufferGeometry();
+        const starCount = 6000;
+        const posArray = new Float32Array(starCount * 3);
+        for (let i = 0; i < starCount * 3; i++) posArray[i] = (Math.random() - 0.5) * 10;
+        starGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const starMaterial = new THREE.PointsMaterial({ size: 0.005, color: 0x3b82f6, transparent: true, opacity: 0.8 });
+        particles = new THREE.Points(starGeo, starMaterial);
+        scene.add(particles);
+        function anim() { requestAnimationFrame(anim); particles.rotation.y += 0.001; renderer.render(scene, camera); }
+        anim();
+    }
+
+    window.onload = () => {
+        initThree();
+        lucide.createIcons();
+        document.getElementById('user-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
         });
-    </script>
-  
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    };
+
+    window.addEventListener('resize', () => {
+        if (camera && renderer) {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+    });
+</script>
+
 
     <!-- CONTACTO -->
     <section id="contacto" class="py-32 bg-slate-950 border-t border-white/5">
