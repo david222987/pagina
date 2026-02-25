@@ -26,7 +26,7 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: "El campo 'prompt' es requerido." });
   }
 
-  const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+  const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-8b:generateContent?key=${apiKey}`;
 
   const payload = {
     contents: [{ parts: [{ text: prompt }] }],
