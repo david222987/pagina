@@ -1,4 +1,10 @@
 {
+  "outputDirectory": "src",
+  "functions": {
+    "api/chat.js": {
+      "runtime": "node"
+    }
+  },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" }
   ]
